@@ -1,0 +1,29 @@
+{
+  "name": "joviverse-web",
+  "version": "1.0.0",
+  "description": "joviverse",
+  "main": "index.js",
+  "repository": "github.com/joviverse/joviverse-web",
+  "author": "joviverse",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development && next dev",
+    "build": "NODE_ENV=production && next build",
+    "start": "NODE_ENV=production && next start"
+  },
+  "dependencies": {
+    "next": "^10.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1",
+    "styled-normalize": "^8.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "@types/styled-components": "^5.1.7",
+    "babel-plugin-styled-components": "^1.12.0",
+    "typescript": "^4.1.5"
+  }
+}
