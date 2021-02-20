@@ -1,6 +1,5 @@
 import React from 'react'
 import ServiceWrapper from '../components/ServiceWrapper'
-import TV from '../components/YouTubeViewer'
 
 const Home = () => {
   return (
@@ -20,7 +19,6 @@ const Home = () => {
         dictumst. Proin dignissim porta sollicitudin. Donec blandit eros sed
         ante semper, sed rutrum nibh sagittis.
       </p>
-      <TV id="oYE1ExUg6YY" />
       <p>
         Quisque pretium turpis sit amet est ultrices mattis. Donec malesuada
         eleifend sem, sit amet vulputate turpis ullamcorper vitae. Cras
