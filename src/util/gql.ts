@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
 export const LOG_IN = gql`
-  {
-    UserLogin(input: { email: "sunghyun.cho@usc.edu", password: "password" }) {
+  query UserLogin($email: String!, $password: String!) {
+    UserLogin(input: { email: $email, password: $password }) {
       isAuthenticated
       token
       errors {

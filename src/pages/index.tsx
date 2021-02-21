@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { LOG_IN } from '../util/gql'
+
+const email = 'sunghyun.cho@usc.edu'
+const password = 'password'
+
 const Home = () => {
   const { loading, data, refetch } = useQuery<any>(LOG_IN, {
-    variables: {},
+    variables: { email, password },
   })
   const [isLoading, setIsLoading] = useState<boolean>(true)
   useEffect(() => {
