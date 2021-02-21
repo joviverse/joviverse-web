@@ -1,31 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { LOG_IN } from '../util/gql'
-import { saveJwtToLocalStorage } from '../util/util'
-
-const email = 'sunghyun.cho@usc.edu'
-const password = 'password'
+import { getLocalJwt } from '../util/util'
+import LoginForm from '../components/LoginForm'
+import LogOutButton from '../components/LogOutButton'
 
 const Home = () => {
-  const { loading, data, refetch } = useQuery<any>(LOG_IN, {
-    variables: { email, password },
-  })
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-  useEffect(() => {
-    refetch()
-  }, [])
-  useEffect(() => {
-    if (!data) return
-    setIsLoading(false)
-    console.log(data)
-    if (data.UserLogin.token) {
-      saveJwtToLocalStorage(data.UserLogin.token)
-    }
-  }, [data])
-  if (isLoading) return <p>loading...</p>
-  else {
-    return JSON.stringify(data)
-  }
+  const [token, setToken] = useState(getLocalJwt())
+  console.log(token, typeof token)
+  return token && token !== 'null' ? (
+    <div>
+      {token}
+      <LogOutButton tokenHandler={setToken} />
+    </div>
+  ) : (
+    <LoginForm tokenHandler={setToken} />
+  )
 }
 
 export default Home
